@@ -1,0 +1,67 @@
+# ============================================================
+# EV Charging Digital Twin – Global Configuration
+# ============================================================
+
+project:
+  name: "EV Charging Digital Twin Fault Detection"
+  version: "1.0.0"
+  author: "Venkata"
+
+# ------------------------------------------------------------
+# Fault Detection Thresholds
+# ------------------------------------------------------------
+fault_thresholds:
+  voltage_fluctuation: 15        # volts deviation from nominal
+  nominal_voltage: 415           # typical 3-phase EV charger voltage
+  overheating_temp: 70           # °C
+  power_loss_kw: 0.1             # kW
+  comm_failure_value: 0          # comm_status == 0
+
+# ------------------------------------------------------------
+# LSTM Model Hyperparameters (PyTorch)
+# ------------------------------------------------------------
+model:
+  window_size: 60
+  hidden_size: 64
+  learning_rate: 0.001
+  epochs: 10
+  batch_size: 64
+
+# ------------------------------------------------------------
+# MQTT Streaming Configuration
+# ------------------------------------------------------------
+mqtt:
+  broker_host: "localhost"
+  broker_port: 1883
+  topic: "ev/charging/sensors"
+  reconnect_interval: 5          # seconds
+
+# ------------------------------------------------------------
+# GPS Navigation Settings
+# ------------------------------------------------------------
+navigation:
+  earth_radius_km: 6371
+  default_user_lat: 17.4500
+  default_user_lon: 78.5300
+
+# ------------------------------------------------------------
+# Digital Twin Visualization
+# ------------------------------------------------------------
+digital_twin:
+  component_colors:
+    normal: "green"
+    voltage_fluctuation: "yellow"
+    power_loss: "red"
+    overheating: "orange"
+    communication_failure: "blue"
+  component_labels:
+    - "Charger"
+    - "Cable"
+    - "Cooling System"
+
+# ------------------------------------------------------------
+# Logging Settings
+# ------------------------------------------------------------
+logging:
+  config_file: "config/logging.conf"
+  log_file: "logs/system.log"
