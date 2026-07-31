@@ -1,0 +1,71 @@
+column_name,category,data_type,description,example_range_or_values,missing_pct
+vehicle_id,Vehicle Information,categorical/string,Unique identifier for each vehicle record.,"EV100000, EV100001, EV100002, EV100003, EV100004, EV100005, EV100006, EV100007 ...",0.0
+vehicle_brand,Vehicle Information,categorical/string,Manufacturer/brand of the electric vehicle (~20 brands).,"Audi, BMW, BYD, Ford, GM, Honda, Hyundai, Kia ...",3.22
+vehicle_model,Vehicle Information,categorical/string,Specific model name within the brand.,"Air, Ariya, Atto 3, BE 6, Cadillac Lyriq, Chevrolet Bolt, Comet EV, Dolphin ...",4.1
+vehicle_type,Vehicle Information,categorical/string,"Body style category (Sedan, SUV, Hatchback, Crossover, Truck, Van).","Crossover, Hatchback, SUV, Sedan, Truck, Van",3.22
+manufacturing_year,Vehicle Information,int,Calendar year the vehicle was manufactured.,2015.00 to 2024.00,4.91
+battery_manufacturer,Vehicle Information,categorical/string,Company that manufactured the battery pack/cells.,"BYD Battery, CATL, Envision AESC, Guoxuan, LG Energy Solution, Northvolt, Panasonic, SK On ...",3.09
+battery_chemistry,Vehicle Information,categorical/string,"Cell chemistry: LFP, NMC, NCA, LMO, or LTO.","LFP, LMO, LTO, NCA, NMC",3.61
+battery_capacity_kwh,Vehicle Information,float,Nominal usable battery capacity in kWh.,25.00 to 149.01,3.45
+drive_type,Vehicle Information,categorical/string,"Drivetrain configuration: FWD, RWD, or AWD.","AWD, FWD, RWD",3.63
+odometer_km,Vehicle Information,float,"Total distance driven by the vehicle, in kilometers.",500.00 to 450000.00,4.33
+vehicle_age_years,Vehicle Information,float,"Age of the vehicle in years, derived from manufacturing year.",1.37 to 11.55,3.84
+fleet_or_private,Vehicle Information,categorical/string,Ownership type: Fleet (commercial/high-utilization) or Private.,"Fleet, Private",4.47
+battery_serial,Battery Information,categorical/string,Unique serial number of the battery pack.,"BAT-10000365, BAT-10001035, BAT-10001108, BAT-10001667, BAT-10002265, BAT-10002328, BAT-10002456, BAT-10002754 ...",0.0
+cycle_count,Battery Information,int,Total number of charge/discharge cycles completed.,1.00 to 3369.00,3.83
+battery_health_percent,Battery Information,float,Overall battery State of Health proxy as a percentage of original capacity.,21.42 to 99.80,4.49
+state_of_charge,Battery Information,float,Current charge level as a percentage of full capacity.,2.00 to 100.00,4.82
+depth_of_discharge,Battery Information,float,Average percentage of capacity discharged per cycle.,5.00 to 92.03,4.16
+state_of_health,Battery Information,float,"Battery State of Health (SoH), percentage of original rated capacity remaining.",21.80 to 100.00,4.78
+cell_voltage_avg,Battery Information,float,"Average voltage across individual cells, in volts.",2.05 to 3.85,4.7
+cell_voltage_std,Battery Information,float,Standard deviation of cell voltages; higher values indicate cell imbalance.,0.00 to 0.06,4.28
+pack_voltage,Battery Information,float,"Total voltage of the assembled battery pack, in volts.",76.75 to 3883.40,3.09
+cell_temperature_avg,Battery Information,float,"Average operating cell temperature, in degrees Celsius.",-20.00 to 65.09,3.84
+cell_temperature_max,Battery Information,float,"Maximum recorded cell temperature, in degrees Celsius.",-47.00 to 255.44,4.72
+internal_resistance,Battery Information,float,"Internal resistance of the battery pack, in milliohms; rises with aging.",0.03 to 4.48,3.99
+charge_efficiency,Battery Information,float,Percentage of input energy successfully stored during charging.,80.58 to 99.50,4.65
+discharge_efficiency,Battery Information,float,Percentage of stored energy successfully delivered during discharge.,72.63 to 99.50,3.4
+remaining_capacity,Battery Information,float,Current usable capacity in kWh (capacity x health%).,7.56 to 147.31,3.07
+capacity_loss_percent,Battery Information,float,Percentage of original capacity lost due to aging/degradation.,0.20 to 78.58,4.78
+charging_cycles_last_month,Charging History,int,Number of charging sessions in the last 30 days.,1.00 to 41.00,3.99
+fast_charge_ratio,Charging History,float,Proportion of charging sessions that used DC fast charging.,0.00 to 1.00,4.94
+slow_charge_ratio,Charging History,float,Proportion of charging sessions that used slow AC charging.,0.00 to 1.00,4.74
+average_charge_power_kw,Charging History,float,"Average charging power delivered, in kW.",0.45 to 415.84,4.52
+average_charging_time,Charging History,float,"Average duration of a charging session, in minutes.",8.00 to 600.00,3.07
+overnight_charging_ratio,Charging History,float,Proportion of charging sessions occurring overnight.,0.00 to 0.94,3.7
+home_charging_ratio,Charging History,float,Proportion of charging sessions occurring at a home charger.,0.00 to 1.00,4.9
+charging_interruptions,Charging History,int,Count of charging sessions interrupted before completion.,0.00 to 9.00,4.82
+overcharge_events,Charging History,int,Count of detected overcharge events beyond recommended limits.,0.00 to 7.00,3.58
+average_speed,Driving Behavior,float,"Average driving speed, in km/h.",10.00 to 119.80,4.92
+average_trip_distance,Driving Behavior,float,"Average distance per trip, in km.",1.00 to 144.10,3.56
+aggressive_acceleration_score,Driving Behavior,float,Composite score (0-100) of harsh/rapid acceleration events.,0.00 to 100.00,3.64
+hard_braking_score,Driving Behavior,float,Composite score (0-100) of harsh braking events.,0.00 to 100.00,4.62
+regenerative_braking_usage,Driving Behavior,float,Percentage utilization of regenerative braking.,0.70 to 100.00,4.53
+highway_driving_ratio,Driving Behavior,float,Proportion of distance driven on highways.,0.00 to 1.00,3.24
+city_driving_ratio,Driving Behavior,float,Proportion of distance driven in city/urban conditions.,0.00 to 1.00,3.62
+daily_distance,Driving Behavior,float,"Average distance driven per day, in km.",3.00 to 205.30,4.28
+average_ambient_temperature,Environment,float,"Average ambient temperature experienced, in degrees Celsius.",-25.00 to 48.00,4.58
+maximum_temperature,Environment,float,"Maximum ambient temperature recorded, in degrees Celsius.",-23.30 to 71.40,4.11
+minimum_temperature,Environment,float,"Minimum ambient temperature recorded, in degrees Celsius.",-42.40 to 48.00,3.12
+humidity,Environment,float,"Average relative humidity, as a percentage.",5.00 to 100.00,4.11
+altitude,Environment,float,"Elevation above sea level of the vehicle's typical operating region, in meters.",0.00 to 2621.30,4.17
+terrain_type,Environment,categorical/string,"Predominant terrain: Flat, Hilly, Mountainous, Coastal, or Desert.","Coastal, Desert, Flat, Hilly, Mountainous",3.56
+dust_exposure,Environment,float,Composite score (0-100) of environmental dust/particulate exposure.,0.00 to 100.00,3.05
+last_service_days,Maintenance,float,Number of days since the last service/maintenance visit.,24.00 to 1500.00,3.67
+cooling_system_health,Maintenance,float,Composite score (0-100) reflecting battery thermal-management system condition.,13.10 to 100.00,4.7
+firmware_updates,Maintenance,int,Count of BMS/vehicle firmware updates applied.,0.00 to 30.00,3.11
+previous_faults,Maintenance,int,Count of previously logged battery-related fault codes.,0.00 to 11.00,3.14
+maintenance_score,Maintenance,float,Composite score (0-100) summarizing overall maintenance quality.,0.00 to 100.00,4.22
+thermal_runaway_risk,Diagnostic Sensors,float,Composite risk score (0-100) for thermal runaway potential.,0.00 to 100.00,3.6
+voltage_imbalance,Diagnostic Sensors,float,Composite score (0-100) reflecting inter-cell voltage imbalance.,0.00 to 190.64,3.62
+temperature_variance,Diagnostic Sensors,float,Spread between max cell temperature and ambient temperature.,0.00 to 32.94,3.18
+sensor_fault_count,Diagnostic Sensors,int,Count of sensor malfunction events detected by onboard diagnostics.,0.00 to 10.00,4.84
+BMS_warning_count,Diagnostic Sensors,int,Count of Battery Management System warning flags raised.,0.00 to 13.00,4.53
+abnormal_voltage_events,Diagnostic Sensors,int,Count of detected abnormal/out-of-range voltage events.,0.00 to 7.00,3.8
+battery_stress_index,Derived Features,float,"Composite index (0-100) of cumulative thermal, DoD, and charging stress.",0.00 to 100.00,3.65
+aging_score,Derived Features,float,"Composite index (0-100) combining cycle usage, vehicle age, and capacity loss.",0.00 to 100.00,4.18
+thermal_health_score,Derived Features,float,"Composite index (0-100), higher is better; inverse of thermal risk exposure.",18.00 to 100.00,3.16
+charging_quality_score,Derived Features,float,"Composite index (0-100), higher is better; reflects charging habit quality.",0.00 to 100.00,3.59
+driving_stress_score,Derived Features,float,Composite index (0-100) of driving-pattern-induced battery stress.,0.00 to 100.00,3.4
+predicted_remaining_life_cycles,Derived Features,int,Estimated number of charge cycles remaining before end-of-life.,0.00 to 15474.00,4.49
+battery_failure,Target,int,"Binary target: 1 = battery failure, 0 = healthy.",0.00 to 1.00,0.0
