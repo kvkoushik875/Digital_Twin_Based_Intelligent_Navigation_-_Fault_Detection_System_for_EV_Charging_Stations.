@@ -1,0 +1,18 @@
+FEATURE_COLUMNS = [
+    "soc_percent",
+    "voltage",
+    "current",
+    "battery_temp",
+    "ambient_temp",
+    "charging_duration_min",
+    "degradation_rate",
+    "efficiency",
+    "charging_cycles",
+    "battery_capacity_kwh",
+    "energy_consumed_kwh",
+    "charging_duration_hours",
+    "charging_rate_kw",
+    "soc_start",
+    "soc_end",
+    "temperature",
+]
